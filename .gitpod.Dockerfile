@@ -21,6 +21,6 @@ RUN sudo pacman --noconfirm -Syu git && \
   rm -rf ~/.cache && \
   rm -rf ~/go && \
   rm -rf ~/build && \
-  yay -S --noconfirm dune-common
+  yay -S --noconfirm dune-common &&\
   yay -Qtdq | xargs -r yay --noconfirm -Rcns && \
   yay -Scc <<< Y <<< Y <<< Y
