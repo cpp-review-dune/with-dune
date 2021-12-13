@@ -18,8 +18,9 @@ RUN sudo pacman --noconfirm -Syyu && \
 
 #Instala el paquete docker
 RUN sudo pacman -S --noconfirm docker docker-compose && \
-  sudo systemctl enable docker && \
-  sudo systemctl start docker 
+  sudo systemctl enable docker 
+  #&& \
+  #sudo systemctl start docker 
 
 #Instala yay
 RUN sudo pacman --noconfirm -Syu git && \
