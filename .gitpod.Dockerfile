@@ -11,3 +11,16 @@ USER gitpod
 RUN sudo pacman --noconfirm -Syyu && \
   pacman -Qtdq | xargs -r sudo pacman --noconfirm -Rcns && \
   sudo pacman -Scc <<< Y <<< Y
+
+RUN sudo pacman --noconfirm -Syu git && \
+  mkdir ~/build && \
+  cd ~/build && \
+  git clone --depth 1 "https://aur.archlinux.org/yay.git" && \
+  cd yay && \
+  makepkg --noconfirm -si && \
+  rm -rf ~/.cache && \
+  rm -rf ~/go && \
+  rm -rf ~/build && \
+  yay -S --noconfirm dune-common
+  yay -Qtdq | xargs -r yay --noconfirm -Rcns && \
+  yay -Scc <<< Y <<< Y <<< Y
