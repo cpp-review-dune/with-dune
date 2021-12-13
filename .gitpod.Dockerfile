@@ -17,7 +17,7 @@ RUN sudo pacman --noconfirm -Syyu && \
   sudo pacman -Scc <<< Y <<< Y
 
 #Instala el paquete docker
-RUN sudo pacman -S docker docker-compose &&\
+RUN sudo pacman -S --noconfirm docker docker-compose &&\
   sudo systemctl enable &&\
   sudo systemctl start docker 
 
