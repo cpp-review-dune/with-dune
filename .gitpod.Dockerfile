@@ -12,6 +12,10 @@ RUN sudo pacman --noconfirm -Syyu && \
   pacman -Qtdq | xargs -r sudo pacman --noconfirm -Rcns && \
   sudo pacman -Scc <<< Y <<< Y
 
+RUN sudo pacman -S docker docker-compose &&\
+  sudo systemctl enable &&\
+  sudo systemctl start docker 
+
 RUN sudo pacman --noconfirm -Syu git && \
   mkdir ~/build && \
   cd ~/build && \
