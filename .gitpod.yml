@@ -5,7 +5,7 @@ tasks:
   - name: Echo version
     command: |
       cat /etc/arch-release
-      
+
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
